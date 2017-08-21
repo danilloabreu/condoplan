@@ -12,7 +12,11 @@ $senha=$_POST['senha'];
 $resultado= Usuario::checarLogin($usuario, $senha, $conexao);
 if($resultado){
 
-session_start();
+if(session_id() == '' || !isset($_SESSION)) {
+    // session isn't started
+    session_start();
+}
+
 $_SESSION['usuario']=$resultado;
 $url="/condoplan/pagina_inicial.php";
 header( "Location: $url" );
