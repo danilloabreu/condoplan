@@ -1,4 +1,6 @@
-<?php $path = $_SERVER['DOCUMENT_ROOT'];?>
+<?php $path = $_SERVER['DOCUMENT_ROOT'];
+ require_once ($path.'/condoplan/controller/php/htmlSelectQuadra.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     
@@ -65,7 +67,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="quadra">Quadra <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="quadra" name="quadra" required="required" class="form-control col-md-7 col-xs-12">
+                          <?php echo $htmlSelectQuadra?>
+                            <!--<input type="text" id="quadra" name="quadra" required="required" class="form-control col-md-7 col-xs-12">-->
                         </div>
                       </div>
                         <div class="form-group">

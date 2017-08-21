@@ -1,9 +1,9 @@
 <?php
 
-class Lote{
+class Quadra{
     
     //variáveis do banco de dados
-    private static $tableDb="lote";    
+    private static $tableDb="quadra";    
     private static $tableColumns = array(
     "id"=>null,
     "quadra"=>null,
@@ -133,5 +133,5 @@ $param=array();
 }
 
 
-}//fim da classe Lote
+}//fim da classe Quadra
 
