@@ -10,7 +10,7 @@ $senha = $xml->senha;
 $bd = $xml->bd;
 */
 //conectando ao servidor
-$conexao = mysqli_connect('mysql.condoplan.com.br',"condoplan","do48soa5"," condoplan");     
+$conexao = mysqli_connect('mysql.condoplan.com.br','condoplan','do48soa5','condoplan');     
      
 //$conexao = mysqli_connect($host,$usuario,$senha,$bd);
 
