@@ -7,11 +7,20 @@ class Lote{
     private static $tableColumns = array(
     "id"=>null,
     "quadra"=>null,
+    "lote"=>null,
   );
     
     public $id;
     public $quadra;
+    public $lote;
   
+    
+    function __construct($id, $quadra, $lote) {
+        $this->id = $id;
+        $this->quadra = $quadra;
+        $this->lote = $lote;
+    }
+
     
     function getId() {
         return $this->id;
@@ -21,21 +30,11 @@ class Lote{
         return $this->quadra;
     }
 
-    function setId($id) {
-        $this->id = $id;
+    function getLote() {
+        return $this->lote;
     }
 
-    function setQuadra($quadra) {
-        $this->quadra = $quadra;
-    }
-
-    function __construct($id, $quadra) {
-        $this->id = $id;
-        $this->quadra = $quadra;
-    }
-
-    
-    
+        
 public static function read ($conexao,$condicao="true"){
     $sql="SELECT ";
     
@@ -131,6 +130,26 @@ $param=array();
     //echo "</pre>";
     return $listaResultado;
 }
+
+
+public static function htmlSelectLote ($conexao,$quadra){
+    
+    $resultado=self::read($conexao,"quadra = '$quadra'");
+    $select="<select id='lote' name='lote' required='required' class='lote'>";
+    foreach ($resultado as $value){
+        $select.="<option value=".$value->getLote().">".$value->getLote()."</option>";                   
+ }
+    $select.="</select>";
+    //echo "<pre>", var_dump($lotes), "</pre>";
+    
+    
+    
+    
+    return $select;
+    
+}
+
+
 
 
 }//fim da classe Lote
