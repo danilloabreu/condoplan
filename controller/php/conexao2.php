@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 // Transformando arquivo XML em Objeto
 $xml = simplexml_load_file('../../ini/conexao.xml');
@@ -10,7 +10,7 @@ $senha = $xml->senha;
 $bd = $xml->bd;
 */
 //conectando ao servidor
-$conexao = mysqli_connect('127.0.0.1',"root","","condoplan");     
+$conexao = mysqli_connect('mysql.condoplan.com.br','condoplan','do48soa5','condoplan');     
      
 //$conexao = mysqli_connect($host,$usuario,$senha,$bd);
 
