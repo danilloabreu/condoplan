@@ -1,29 +1,10 @@
-﻿<?php
-/*
-// Transformando arquivo XML em Objeto
-$xml = simplexml_load_file('../../ini/conexao.xml');
-
-//recuperando os campos
-$host= $xml->host;
-$usuario = $xml->usuario;
-$senha = $xml->senha;
-$bd = $xml->bd;
-*/
-//conectando ao servidor
-$conexao = mysqli_connect('mysql.condoplan.com.br','condoplan','do48soa5','condoplan');     
-     
-//$conexao = mysqli_connect($host,$usuario,$senha,$bd);
-
+<?php
+$conexao = mysqli_connect('mysql.condoplan.com.br','condoplan','do48soa5','condoplan');
 // Caso a conexão seja reprovada, exibe na tela uma mensagem de erro
-if (!$conexao) die ("<h1>Falha na conexão com o Banco de Dados!</h1>");
-
+if(!$conexao) die ("<h1>Falha na conexão com o Banco de Dados!</h1>");
 //set correct charset
 $conexao->set_charset("utf8");
-
 //reporta todos os erros
-$driver = new mysqli_driver();
-$driver->report_mode = MYSQLI_REPORT_ERROR;
-
-
-
-
+//$driver = new mysqli_driver();
+//$driver->report_mode = MYSQLI_REPORT_ERROR;
+?>

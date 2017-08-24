@@ -135,7 +135,7 @@ $param=array();
 public static function htmlSelectLote ($conexao,$quadra){
     
     $resultado=self::read($conexao,"quadra = '$quadra'");
-    $select="<select id='lote' name='lote' required='required' class='lote'>";
+    $select="<select id='lote' name='lote' required='required' class='form-control col-md-7 col-xs-12'>";
     foreach ($resultado as $value){
         $select.="<option value=".$value->getLote().">".$value->getLote()."</option>";                   
  }

@@ -1,14 +1,14 @@
 <?php $path = $_SERVER['DOCUMENT_ROOT'];
  require_once ($path.'/condoplan/controller/php/htmlSelectQuadra.php');
-?>
+ require_once ($path.'/condoplan/Model/php/Lote.php')
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     
  <head>
  <title>CondoPlan - Iniciar aprovação</title>      
     <?php require($path.'/condoplan/view/php/header.php'); ?><!--arquivos comuns do cabeçalho-->
-    <!-- Switchery -->
-    <link href="/condoplan/util/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    
 </head>   
     
 <body class="nav-md">
@@ -51,7 +51,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="analise" method="post" action="/condoplan/controller/php/recebe_aprovacao_projeto.php" enctype="multipart/form-data" class="form-horizontal form-label-left formularioEntrada" style="display:none">
+                    <form id="formAprovacao" method="post" action="/condoplan/controller/php/recebe_aprovacao_projeto.php" enctype="multipart/form-data" class="form-horizontal form-label-left">
                         <?php if (!empty($_GET['id'])) {
                             echo "<input type='hidden' id='idLoad' value=".$_GET['id'].">";
                         }?>
@@ -71,11 +71,12 @@
                             <!--<input type="text" id="quadra" name="quadra" required="required" class="form-control col-md-7 col-xs-12">-->
                         </div>
                       </div>
-                        <div class="form-group">
+                        <div class="form-group" >
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lote">Lote <span class="required">*</span>
                         </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" id="lote" name="lote" required="required" class="form-control col-md-7 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12" id="divSelectLote">
+                          <!--<input type="number" id="lote" name="lote" required="required" class="form-control col-md-7 col-xs-12">-->
+                         <?php echo Lote::htmlSelectLote($conexao,"A")?>
                         </div>
                       </div>
                         
@@ -110,23 +111,9 @@
 
 
 <?php require($path.'/condoplan/view/php/footer_script.php') ?><!--scripts do rodapé-->
-<!-- Switchery -->
-    <script src="/condoplan/util/vendors/switchery/dist/switchery.min.js"></script>
-<!-- Jquery mask -->    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.js"></script>
-
 
 <!--Controlador-->
     <script src="/condoplan/controller/js/AprovacaoController.js"></script>
-
-   <?php //caso o formulário seja de alteração
-        if (empty($_GET['id'])) {
-        echo "<script>$('.formularioEntrada').show()</script>";    
-    }else{
-        echo "<script>propostaController.carregarProposta()</script>";
-    }
-    
-    ?>
-                        
+                     
 </body>
 </html>    
