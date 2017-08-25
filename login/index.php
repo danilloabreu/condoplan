@@ -10,7 +10,7 @@ $path = $_SERVER['DOCUMENT_ROOT'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>CondoPlan </title>
+    <title>Bem vindo ao CondoPlan!</title>
 
     <!-- Bootstrap -->
     <link href="/condoplan/util/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@ $path = $_SERVER['DOCUMENT_ROOT'];
     <!-- jQuery -->
     <script src="/condoplan/util/vendors/jquery/dist/jquery.js"></script>
  
-    <script src="/condoplan/controller/js/login.js"></script>
+    <script src="login.js"></script>
   </head>
 
   <body class="login">
@@ -38,7 +38,7 @@ $path = $_SERVER['DOCUMENT_ROOT'];
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-              <form id="formulario" action="/condoplan/controller/php/validar_login.php" method="post">
+              <form id="formulario" action="validar_login.php" method="post">
               <h1>Login</h1>
               <div>
                 <input type="text" class="form-control" placeholder="Username" required="" name="usuario" />

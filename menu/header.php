@@ -1,5 +1,5 @@
 <?php
-require_once "$path/condoplan/model/php/Usuario.php";
+require_once "$path/condoplan/util/model/php/Usuario.php";
 if(session_id() == '' || !isset($_SESSION)) {
     // session isn't started
     session_start();

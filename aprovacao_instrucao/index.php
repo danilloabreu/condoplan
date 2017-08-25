@@ -1,5 +1,5 @@
 <?php $path = $_SERVER['DOCUMENT_ROOT'];
-require_once "$path/condoplan/model/php/Usuario.php";
+require_once "$path/condoplan/util/model/php/Usuario.php";
 session_start();
 ?>
 <!DOCTYPE html>
@@ -7,16 +7,15 @@ session_start();
     
  <head>
  <title>Condoplan - Gerenciador de Condominios</title>      
-    <?php require($path.'/condoplan/view/php/header.php'); ?><!--arquivos comuns do cabeçalho-->
-    <!-- Switchery -->
-    <link href="/condoplan/util/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <?php require($path.'/condoplan/menu/header.php'); ?><!--arquivos comuns do cabeçalho-->
+  
 </head>   
     
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
-    <?php require($path.'/condoplan/view/php/menu_lateral.php') ?><!--menu lateral-->
-    <?php require($path.'/condoplan/view/php/menu_superior.php') ?><!--menu superior-->
+    <?php require($path.'/condoplan/menu/menu_lateral.php') ?><!--menu lateral-->
+    <?php require($path.'/condoplan/menu/menu_superior.php') ?><!--menu superior-->
    
     
     <!-- page content -->
@@ -24,7 +23,7 @@ session_start();
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Página Inicial</h3>
+                <h3>Instruções para a aprovação dos projetos</h3>
               </div>
 
               <div class="title_right">
@@ -45,7 +44,7 @@ session_start();
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>CondoPlan</h2>
+                    <h2>Jardim Barra do Cisne</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -63,8 +62,17 @@ session_start();
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
-                      Utilize os botões laterais para navegação
+                  <div class="x_content">    
+            <ol>
+            <li><p>Elaborar o projeto de acordo com a úlima revisão do código de obras </p></li>
+            <li><p>Faça o pagamento da taxa de Análise</p></li>
+            <li><p>Clique em iniciar. Preencha o formulário e faça o upload do projeto</p></li>
+            <li><p>Seu projeto será analisado e o parecer estará disponível no sistema</p></li>
+            <li><p>Elabore as correções necessárias</p></li>
+            <li><p>Assim que aprovado,será disponivilizado o carimbo da Associação</p></li>
+            <li><p>Faça o novo upload</p></li>
+            </ol>
+         
                   </div>
                 </div>
               </div>
@@ -72,10 +80,10 @@ session_start();
           </div>
         </div>
         <!-- /page content -->
-<?php require($path.'/condoplan/view/php/footer.php') ?><!--rodape-->    
+<?php require($path.'/condoplan/menu/footer.php') ?><!--rodape-->    
     </div><!--end of main container-->
  </div><!--end of container body-->
-<?php require($path.'/condoplan/view/php/footer_script.php') ?><!--scripts do rodapé-->
+<?php require($path.'/condoplan/menu/footer_script.php') ?><!--scripts do rodapé-->
 
 
 </body>

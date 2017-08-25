@@ -23,8 +23,8 @@
 
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <?php if($_SESSION['usuario']->getAcesso_projeto()) require_once "$path/condoplan/view/menu/menu_projetos.html";?>
-                <?php if($_SESSION['usuario']->getAcesso_apr_projeto()) require_once "$path/condoplan/view/menu/menu_apr_projetos.html";?>   
+              <?php if($_SESSION['usuario']->getAcesso_projeto()) require_once "$path/condoplan/menu/sub/menu_projetos.html";?>
+                <?php if($_SESSION['usuario']->getAcesso_apr_projeto()) require_once "$path/condoplan/menu/sub/menu_apr_projetos.html";?>   
                  
                 
               
